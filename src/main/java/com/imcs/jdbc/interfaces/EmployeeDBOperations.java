@@ -14,4 +14,5 @@ public interface EmployeeDBOperations {
 	public double getEmployeeHRA(int id);
 	public double getEmployeeGrossSalary(int id);
 	public List<Employee> getAllEmployeeInfo(int order);
+	public int getEmployeeAge(int id);
 }

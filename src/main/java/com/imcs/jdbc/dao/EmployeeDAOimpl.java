@@ -170,4 +170,23 @@ public class EmployeeDAOimpl implements EmployeeDAO {
 		}
 	}
 
+	@Override
+	public int getEmployeeAge(int id) throws SQLException {
+		ResultSet resultSet = null;
+		int age = 0;
+		try(PreparedStatement statement = connection.prepareStatement("select age from imcs.employee where empid = ? ")) {
+			statement.setInt(1, id);
+			resultSet = statement.executeQuery();
+			if (resultSet.next()) {
+				age =  resultSet.getInt("age");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if(resultSet!=null)
+				resultSet.close();
+		}
+        return age;
+	}
+
 }

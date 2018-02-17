@@ -33,7 +33,8 @@ public class EmployeeDBOperationsApp {
 				System.out.println("8. Sort All Employees By Salary");
 				System.out.println("9. Sort All Employees By Name And Salary");
 				System.out.println("10. Sort All Employees By Id");
-				System.out.println("11. Exit");
+				System.out.println("11. Display selected employee Age");
+				System.out.println("12. Exit");
 				System.out.println("=========================================================================");
 				int choice = sc.nextInt();
 
@@ -69,6 +70,9 @@ public class EmployeeDBOperationsApp {
 					sortByID();
 					break;
 				case 11:
+					displayEmployeeAge(sc);
+					break;
+				case 12:
 					System.exit(0);
 					break;
 				}
@@ -186,6 +190,16 @@ public class EmployeeDBOperationsApp {
 		for(Employee employee : employeeList)
 			if(employee!=null)
 				System.out.println(employee);
+	}
+	
+	private void displayEmployeeAge(Scanner sc) {
+		System.out.println("Enter Employee ID : ");
+		int id = sc.nextInt();
+		int age = impl.getEmployeeAge(id);
+		if(age==0)
+			System.out.println("Provided Employee Id not valid");
+		else
+			System.out.println("Employee id : "+id+" , age : "+age);
 	}
 	
 }
