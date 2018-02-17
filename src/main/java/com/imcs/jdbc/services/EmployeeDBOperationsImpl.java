@@ -93,6 +93,17 @@ public class EmployeeDBOperationsImpl implements EmployeeDBOperations{
 		return null;
 	}
 
+	@Override
+	public int getEmployeeAge(int id) {
+		int age = 0;
+		try {
+			age =  dao.getEmployeeAge(id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return age;
+	}
+
 	
 	
 }

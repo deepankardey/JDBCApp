@@ -12,4 +12,5 @@ public interface EmployeeDAO {
 	public Employee getEmployeeInfo(int id)throws SQLException;
 	public int getEmployeeSalary(int id)throws SQLException;
 	public List<Employee> getAllEmployeeInfo(int order)throws SQLException;
+	public int getEmployeeAge(int id)throws SQLException;
 }
